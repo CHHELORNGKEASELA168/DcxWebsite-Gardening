@@ -1,0 +1,243 @@
+/* FenceSection.css */
+.fence-section {
+    position: relative;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.fence-section__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.92) 0%,
+            rgba(255, 255, 255, 0.88) 50%,
+            rgba(255, 255, 255, 0.85) 100%);
+    z-index: 1;
+}
+
+.fence-section__content {
+    position: relative;
+    /* z-index: 2; */
+    max-width: 1150px;
+    margin: 0 auto;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.fence-section__text {
+    padding: 2rem;
+    width: 35%;
+    /* background-color: #1b5e20; */
+}
+
+.fence-section__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #2e7d32;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.fence-section__title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2e7d32, #4caf50);
+    border-radius: 2px;
+}
+
+.fence-section__description {
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.fence-section__description p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+    text-align: justify;
+}
+
+.fence-section__cta {
+    background: linear-gradient(135deg, #2e7d32, #4caf50);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fence-section__cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+}
+
+.fence-section__features {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 1.5rem;
+    width: 65;
+    /* background-color: red; */
+}
+.fence-section__features img {
+    width: 390px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid #2e7d32;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(46, 125, 50, 0.05),
+            transparent);
+    transition: left 0.6s ease;
+}
+
+.feature-card:hover::before {
+    left: 100%;
+}
+
+.feature-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #2e7d32;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fence-section__text {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.fence-section__features {
+    animation: fadeInRight 0.8s ease-out 0.2s both;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .fence-section__features {
+        width: 100%;
+
+    }
+    .fence-section__content {
+        display: block;
+        text-align: center;
+    }
+}
+@media (max-width: 992px) {
+    .fence-section__content {
+        /* flex-direction: column; */
+        display: block;
+        text-align: center;
+    }
+
+    .fence-section__text,
+    .fence-section__features {
+        width: 100%;
+        display: block;
+    }
+
+    .fence-section__features img {
+        max-width: 100%;
+    }
+
+    .fence-section__title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .fence-section__title {
+        font-size: 1.8rem;
+    }
+
+    .fence-section__description p {
+        font-size: 1rem;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+}

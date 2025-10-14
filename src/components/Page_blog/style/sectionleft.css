@@ -1,0 +1,508 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    align-items: start;
+    margin-bottom: -40px;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding-right: 40px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #ff5a3c;
+}
+
+/* Blog Card Styles */
+.blog-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 40px;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+.blog-image {
+    position: relative;
+    height: 350px;
+    /* overflow: hidden; */
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.date-badge {
+    position: absolute;
+    bottom: -30px;
+    left: 20px;
+    background: green;
+    color: white;
+    padding: 25px 30px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 70px;
+    transition: 0.2s;
+}
+.date-badge:hover {
+    background: none;
+}
+
+.date-badge .day {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.date-badge .month {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.blog-content {
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.blog-title:hover {
+    color: #ff5a3c;
+}
+
+.blog-text {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.blog-meta {
+    display: flex;
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.meta-item i {
+    color: #ff5a3c;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ddd, transparent);
+    margin: 40px 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    /* position: sticky; */
+    top: 20px;
+}
+
+.sidebar-widget {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.sidebar-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.sidebar-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #ff5a3c;
+}
+
+/* Search Box Styles */
+.search-box {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    background: #f8f9fa;
+    font-size: 0.9rem;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-button {
+    background: green;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+}
+
+.search-button:hover {
+    background: #e04a2d;
+}
+
+/* Category List Styles */
+.category-list {
+    list-style: none;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    /* border-bottom: 1px solid #f0f0f0; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+.category-item:hover {
+    background: #f8f9fa;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 -10px;
+    border-radius: 5px;
+}
+
+.category-item:hover .category-name {
+    color: #ff5a3c;
+}
+
+.category-name {
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.category-count {
+    color: #888;
+    font-size: 0.85rem;
+    background: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 12px;
+    min-width: 35px;
+    text-align: center;
+}
+
+/* Recent Posts Styles */
+.recent-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recent-post-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.recent-post-item:hover {
+    background: #f8f9fa;
+}
+
+.recent-post-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.recent-post-content h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.recent-post-content span {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+
+
+/* Tag Clouds Styles */
+.tag-clouds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #f8f9fa;
+    color: #555;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: lowercase;
+}
+
+.tag:hover {
+    background: green;
+    color: white;
+    border-color: green;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 90, 60, 0.3);
+}
+
+/* Instagram Feeds Styles */
+.instagram-feeds {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.instagram-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-icon {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.instagram-item:hover img {
+    transform: scale(1.1);
+}
+
+.instagram-item:hover .instagram-overlay {
+    opacity: 1;
+}
+
+
+.search-box-bottom .search-input{
+    display: block;
+    width: 100%;
+    margin-bottom: 1.25rem;
+    padding: 17px 12;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    
+}
+.search-button-bottom {
+    width: 100%;
+    border: 1px solid green;
+    transition: all 0.3s linear;
+}
+.search-button-bottom:hover{
+    background: green;
+}
+.search-button-bottom:hover .btn-btm {
+    color: #fff;
+}
+.btn-btm {
+    border: none;
+    padding: 20px 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    opacity: 0.8;
+    color: rgb(15, 210, 15);
+    background: none;
+}
+
+.btn-btm-click button{
+    padding: 10px 20px;
+}
+/* Responsive adjustments for new widgets */
+@media (max-width: 768px) {
+    .tag {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .instagram-feeds {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tag-clouds {
+        gap: 8px;
+    }
+    
+    .tag {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .instagram-feeds {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px 15px;
+    }
+    
+    .main-content {
+        padding-right: 0;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .blog-image {
+        height: 250px;
+    }
+    
+    .blog-content {
+        padding: 20px;
+    }
+    
+    .sidebar-widget {
+        padding: 20px;
+    }
+    
+    .blog-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.7rem;
+    }
+    
+    .blog-title {
+        font-size: 1.3rem;
+    }
+    
+    .blog-image {
+        height: 200px;
+    }
+    
+    .date-badge {
+        padding: 10px;
+        min-width: 60px;
+    }
+    
+    .date-badge .day {
+        font-size: 1.2rem;
+    }
+}

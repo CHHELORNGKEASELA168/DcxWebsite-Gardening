@@ -1,0 +1,102 @@
+/* ServicesBanner.css */
+.about-banner {
+    position: relative;
+    background-image: url('https://bioadvanced.com/media/wysiwyg/live_media/2018-06/Warm-Season_VS._Cool-Season_Grasses.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 6rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 100%;
+    height: 320px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    /* background: #EFF6F0; */
+}
+
+.services-banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: linear-gradient(135deg, rgba(46, 125, 50, 0.85) 0%, rgba(76, 175, 80, 0.75) 100%); */
+    z-index: 1;
+}
+
+.services-banner__content {
+    position: relative;
+    z-index: 2;
+}
+
+.services-banner__header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.services-banner__header h2 {
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.services-banner__header p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse animation for cards */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.service-card:hover {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-banner {
+        padding: 3rem 1.5rem;
+    }
+
+    .services-banner__header h2 {
+        font-size: 2.2rem;
+    }
+
+    .services-banner__header p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-banner {
+        padding: 2.5rem 1rem;
+    }
+
+}
