@@ -23,12 +23,12 @@
 .fence-section__content {
     position: relative;
     /* z-index: 2; */
-    max-width: 1150px;
+    max-width: 1250px;
     margin: 0 auto;
     /* display: grid;
     grid-template-columns: 1fr 1fr; */
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 }
 
